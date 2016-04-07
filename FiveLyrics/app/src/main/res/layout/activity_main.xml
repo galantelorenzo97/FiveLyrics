@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="me.lorenzogalante.android.fivelyrics.MainActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/pink_floyd"
+                android:layout_marginRight="16dp"
+                android:onClick="PinkFloyd"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/foo_fighters"
+                android:onClick="FooFighters"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/the_buggles"
+                android:onClick="TheBuggles"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/toto_africa"
+                android:onClick="Toto"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/iron_maiden"
+                android:onClick="ironMaiden"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/name_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Name: \nArtist: \nAlbum: \nYear: \nLabel: "
+        android:layout_marginBottom="16dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lyric_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "Once you hit one of those buttons you're gonna see some serious sh*t!"
+            android:layout_marginBottom="16dp"/>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="buy this song"
+        android:textAllCaps="true"
+        />
+
+</LinearLayout>
+
