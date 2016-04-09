@@ -16,11 +16,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void printAlbum(String name, String artist, String album, String year, String label){
-        String nameOutput = "Name: " + name;
-        nameOutput += "\nArtist: " + artist;
-        nameOutput += "\nAlbum: " + album;
-        nameOutput += "\nYear: " + year;
-        nameOutput += "\nLabel: " + label;
+        String nameOutput = name;
+        nameOutput += "\n" + artist;
+        nameOutput += "\n" + album;
+        nameOutput += "\n" + year;
+        nameOutput += "\n" + label;
         TextView nameDisplay = (TextView) findViewById(R.id.name_display);
         nameDisplay.setText(nameOutput);
     }
