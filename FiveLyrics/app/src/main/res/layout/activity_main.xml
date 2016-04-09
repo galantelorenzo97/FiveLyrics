@@ -104,7 +104,7 @@
         android:gravity="center"
         android:text="Name\nArtist\nAlbum\nYear\nLabel"
         android:textColor="#00FF00"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <ScrollView
         android:id="@+id/lyric_display_scroll"
@@ -122,7 +122,7 @@
             android:gravity="center"
             android:text="Click a button to display song lyrics here"
             android:textColor="#FFFFFF"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
     </ScrollView>
 
     <View
