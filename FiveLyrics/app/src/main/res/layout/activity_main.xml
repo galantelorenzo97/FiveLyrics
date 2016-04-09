@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,97 +13,127 @@
 
     <!-- created button first, because otherwise would not be recognized by other views -->
     ​
+
     <Button
         android:id="@+id/buy_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="buy this song"
-        android:textAllCaps="true"
         android:layout_alignParentBottom="true"
-        />
+        android:onClick="buySong"
+        android:text="buy this song"
+        android:textAllCaps="true" />
 
-    ​<View
-    android:id="@+id/separator"
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:layout_marginTop="6dp"
-    android:background="#000000"
-    android:layout_above="@id/buy_button">
-    </View>
+    ​
 
-        <HorizontalScrollView
-            android:id="@+id/album_button_scrollview"
-            android:layout_width="match_parent"
+    <View
+        android:id="@+id/button_lyric_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/buy_button"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="6dp"
+        android:background="#FFFFFF"></View>
+
+    <HorizontalScrollView
+        android:id="@+id/album_button_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Hello World!">
+        ​
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal">
             ​
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                ​
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/pink_floyd"
-                    android:layout_marginRight="16dp"
-                    android:onClick="PinkFloyd"/>
-                ​
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/foo_fighters"
-                    android:onClick="FooFighters"/>
-                ​
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/the_buggles"
-                    android:onClick="TheBuggles"/>
-                ​
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/toto_africa"
-                    android:onClick="Toto"/>
-                ​
-                <Button
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="16dp"
-                    android:background="@drawable/iron_maiden"
-                    android:onClick="ironMaiden"/>
-            </LinearLayout>
-        </HorizontalScrollView>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/pink_floyd"
+                android:onClick="PinkFloyd" />
+            ​
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/foo_fighters"
+                android:onClick="FooFighters" />
+            ​
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/the_buggles"
+                android:onClick="TheBuggles" />
+            ​
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/toto_africa"
+                android:onClick="Toto" />
+            ​
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/iron_maiden"
+                android:onClick="ironMaiden" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/name_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/album_button_scrollview"
+        android:layout_marginBottom="16dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:text="Name\nArtist\nAlbum\nYear\nLabel"
+        android:textColor="#00FF00"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:id="@+id/lyric_display_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_lyric_separator"
+        android:layout_below="@id/name_display"
+        android:background="#000000">
 
         <TextView
-            android:layout_below="@id/album_button_scrollview"
-            android:id="@+id/name_display"
+            android:id="@+id/lyric_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text = "Name\nArtist\nAlbum\nYear\nLabel"
-            android:layout_marginBottom="16dp"/>
+            android:text="Click a button to display song lyrics here"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </ScrollView>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lyric_display_scroll"
-            android:layout_below="@id/name_display"
-            android:layout_above="@id/separator">
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/lyric_display"
-                android:gravity="center"
-                android:text = "Once you hit one of those buttons you're gonna see some serious sh*t!"
-                android:layout_marginBottom="16dp"/>
-        </ScrollView>
+    <View
+        android:id="@+id/name_lyric_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/lyric_display_scroll"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        android:backgroundTint="#FFFFFF"></View>
+
 </RelativeLayout>
